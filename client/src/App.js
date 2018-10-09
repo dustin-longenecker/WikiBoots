@@ -6,7 +6,7 @@ const App = () => (
   <Router>
 
 
-    {/* <div>
+    <div>
       <Nav />
       <Switch>
         <Route exact path="/" component={Lesson} />
@@ -14,7 +14,7 @@ const App = () => (
         <Route exact path="/lessons/:id" component={Detail} />
         <Route component={NoMatch} />
       </Switch>
-    </div> */}
+    </div>
   </Router>
 );
 
