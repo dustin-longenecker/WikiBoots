@@ -1,3 +1,4 @@
 module.exports = {
-    Lesson: require("./lesson")
+    Lesson: require("./lesson"),
+    Note: require("./note")
 };
