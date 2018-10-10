@@ -11,7 +11,7 @@ const lessonSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Note"
     },
-    user: { type: string, required: true }
+    user: { type: String }
 });
 
 const Lesson = mongoose.model("Lesson", lessonSchema);
