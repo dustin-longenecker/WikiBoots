@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { compose } from 'recompose';
 
+import Content from '../Content';
 import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
 
@@ -21,7 +22,7 @@ class HomePage extends Component {
       <div>
         <h1>Home</h1>
         <p>The Home Page is accessible by every signed in user.</p>
-
+        <Content/>
         { !!users && <UserList users={users} /> }
       </div>
     );
