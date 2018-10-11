@@ -1,9 +1,15 @@
 import React from 'react';
+import Lesson from 'LessonList';
+import Content from 'Content';
 
-const LandingPage = () =>
+class LandingPage extends Component= () =>
   <div>
-    <h1>Landing</h1>
-    <p>The Landing Page is open to everyone, even though the user isn't signed in.</p>
+    <h1>WikiBoots</h1>
+    <Navigation/>
+    <p>Welcome to WikiBoots, the site created by BootCamp students for bootcamp students, etc.. Brief explanation of what is.</p>
+    <Content> </Content>
+    <LessonList> </LessonList>
+
   </div>
 
 export default LandingPage;
