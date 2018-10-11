@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const LessonList = ({ children }) => {
+export const LessonList = ({ children }) => {
   return (
     <div className="list-overflow-container">
       <ul className="list-group">
@@ -11,7 +11,3 @@ const LessonList = ({ children }) => {
   );
 };
 
-
-
-
-export default LessonList;

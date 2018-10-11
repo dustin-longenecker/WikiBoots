@@ -12,8 +12,8 @@ const lessonSchema = new Schema({
         ref: "Note"
     },
     user: { type: String },
-    thumbsUp: { },
-    thumbsDown: { }
+    thumbsUp: { type: Number},
+    thumbsDown: { type: Number}
 });
 
 const Lesson = mongoose.model("Lesson", lessonSchema);
