@@ -11,7 +11,9 @@ const lessonSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Note"
     },
-    user: { type: String }
+    user: { type: String },
+    thumbsUp: { },
+    thumbsDown: { }
 });
 
 const Lesson = mongoose.model("Lesson", lessonSchema);
