@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Notes from '../Notes';
-class Lesson extends React {
+class Lesson extends Component {
   render() {
     return (
-      <div>
+      <div className = "col-sm-10">
         <h2>title</h2>title explanation code video notes
         <p>user</p>
         <p>explanation</p>

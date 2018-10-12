@@ -13,7 +13,7 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';
-import Content from "../Content";
+
 
 
 import './index.css';
@@ -22,8 +22,7 @@ const App = () =>
   <Router>
     <div className="app">
       <Navigation />
-
-      <Content />
+      
 
       <hr/>
 
