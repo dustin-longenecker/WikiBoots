@@ -11,7 +11,7 @@ class Content extends Component {
   componentDidMount() {
     this.loadLessons();
   }
-  
+
   loadLessons = () => {
     API.getLessons()
       .then(res =>
@@ -20,13 +20,13 @@ class Content extends Component {
       .catch(err => console.log(err));
   };
 
-  
+
 //   deleteBook = id => {
 //     API.deleteBook(id)
 //       .then(res => this.loadBooks())
 //       .catch(err => console.log(err));
 //   };
-  
+
   // handleInputChange = event => {
   //   const { name, value } = event.target;
   //   this.setState({
@@ -57,7 +57,7 @@ class Content extends Component {
                 {this.state.lessons.map(lesson => (
                     <ListItem key={lesson._id}>
                     <Link to={"/lessons/"+lesson._id}>
-                    <strong> 
+                    <strong>
                     {lesson.title}
                     </strong>
                     </Link>
@@ -65,9 +65,9 @@ class Content extends Component {
                 ))}
         </LessonList> ) : (<h3> No results to display</h3>)}
 
-        
+
       </div>
-      
+
     );
   }
 }
