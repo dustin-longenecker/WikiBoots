@@ -6,13 +6,16 @@ import { compose } from 'recompose';
 import SignOutButton from '../SignOut';
 import * as routes from '../../constants/routes';
 
+import { Navbar, Nav, NavItem } from 'reactstrap';
+
+
 const Navigation = ({ sessionStore }) =>
-  <div>
+  <Nav>
     { sessionStore.authUser
         ? <NavigationAuth />
         : <NavigationNonAuth />
     }
-  </div>
+  </Nav>
 
 const NavigationAuth = () =>
   <ul>
