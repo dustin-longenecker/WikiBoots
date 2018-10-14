@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Notes from '../Notes';
 class Lesson extends Component {
+
   render() {
     return (
       <div className = "col-sm-10">

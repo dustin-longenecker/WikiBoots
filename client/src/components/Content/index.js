@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { LessonList, ListItem } from "../LessonList";
 import Lesson from "../Lesson";
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom';
-import * as routes from '../../constants/routes';
+
 
 
 class Content extends Component {
@@ -19,6 +15,8 @@ class Content extends Component {
   componentDidMount() {
     this.loadLessons();
   }
+
+ 
 
   loadLessons = () => {
     API.getLessons()
@@ -51,9 +49,8 @@ class Content extends Component {
               </ListItem>
             ))}
           </LessonList>) : (<h3> No results to display</h3>)}
-        <Router>
-        <Route exact path={routes.LESSONCONTENT} component={() => <Lesson />} />
-        </Router>
+          {/* {this.props.match.params.id ? this.selectLesson(this.props.match.params.id) : 
+            (<h3> Select a lesson </h3>)} */}
       </div>
 
     );
