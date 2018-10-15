@@ -6,7 +6,9 @@ export default class LessonForm extends React.Component {
   state = {
     title: "",
     subject: "",
-    explanation: ""
+    explanation: "",
+    code: "",
+    video: "",
   }
 
   handleInputChange = event => {
@@ -23,7 +25,9 @@ export default class LessonForm extends React.Component {
         title: this.state.title,
         subject: this.state.subject,
         explanation: this.state.explanation,
-      })
+        code: this.state.code,
+        video: this.state.video
+      }).then(res => console.log(res))
         // .then(res => this.loadLessons()) REFRESH PAGE HERE SO NEWLY ADDED LESSON SHOWS UP?
         .catch(err => console.log(err));
     }
@@ -34,13 +38,14 @@ export default class LessonForm extends React.Component {
       <Form id="lessonSubmitForm">
 
         <FormGroup row>
-          <Label for="exampleText" sm={2}>Name of Lesson</Label>
+          <Label for="exampleText"  sm={2}>Name of Lesson</Label>
           <Col sm={10}>
-            <Input 
-              type="text" 
-              name="title" 
-              id="lessonName" 
-              value={this.state.title} 
+            <Input
+              placeholder="Lesson Name"
+              type="text"
+              name="title"
+              id="lessonName"
+              value={this.state.title}
               onChange={this.handleInputChange}
             />
           </Col>
@@ -67,12 +72,44 @@ export default class LessonForm extends React.Component {
         <FormGroup row>
           <Label for="exampleText" sm={2}>Content</Label>
           <Col sm={10}>
-            <Input 
-              type="textarea" 
-              name="explanation" 
-              id="lessonContent" 
+            <Input
+              placeholder="Lesson Content"
+
+              type="textarea"
+              name="explanation"
+              id="lessonContent"
               rows="10"
               value={this.state.explanation}
+              onChange={this.handleInputChange}
+            />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label for="exampleText" sm={2}>Code</Label>
+          <Col sm={10}>
+            <Input
+              placeholder="Lesson Content"
+
+              type="textarea"
+              name="code"
+              id="lessonCode"
+              rows="10"
+              value={this.state.code}
+              onChange={this.handleInputChange}
+            />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label for="exampleText" sm={2}>Video</Label>
+          <Col sm={10}>
+            <Input
+              placeholder="Lesson Content"
+
+              type="text"
+              name="video"
+              id="lessonVideo"
+              rows="10"
+              value={this.state.video}
               onChange={this.handleInputChange}
             />
           </Col>
@@ -80,7 +117,7 @@ export default class LessonForm extends React.Component {
 
         <FormGroup check row>
           <Col sm={{ size: 10, offset: 2 }}>
-            <Button 
+            <Button
               id="lessonSubmitButton"
               onClick={this.handleFormSubmit}
             >
@@ -92,6 +129,3 @@ export default class LessonForm extends React.Component {
     );
   }
 }
-
-
-
