@@ -25,9 +25,11 @@ module.exports = {
     },
 
     createNote: function (req, res) {
+        console.log("note: " + req.body);
         db.Note
             .create(req.body)
             .then(function (dbLesson) {
+                console.log(req.body);
                 return db.Lesson.findOneAndUpdate({ _id: req.params.id }, { notes: dbLesson._id }, { new: true });
             })
             .then(function (dbLesson) {

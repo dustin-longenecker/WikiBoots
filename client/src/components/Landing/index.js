@@ -16,10 +16,9 @@ class LandingPage extends Component {
         <p>Welcome to WikiBoots, the site created by BootCamp students for bootcamp students, etc.. Brief explanation of what is.</p>
         {this.props.match.params.id ? (
           <Content id={this.props.match.params.id}> </Content> 
-        ) : (
+          ) : (
           <Content></Content>
-          <AddNote/>
-        )}
+          )}
 
       
 

@@ -39,6 +39,7 @@ class Content extends Component {
       .catch(err => console.log(err))
   };
 
+
   render() {
     return (
       <div className = "row">
@@ -46,7 +47,7 @@ class Content extends Component {
           <LessonList>
             {this.state.lessons.map(lesson => (
               <ListItem key={lesson._id}>
-                <Link to={"/lessons/" + lesson._id}>
+                <Link onClick={() => this.selectLesson(lesson._id)} to={"/lessons/" + lesson._id}>
                   <strong>
                     {lesson.title}
                   </strong>
@@ -55,7 +56,7 @@ class Content extends Component {
             ))}
           </LessonList>) : (<h3> No results to display</h3>)}
           {this.props.id ? (
-            <Lesson data = {this.state.currentLesson}/>
+            <Lesson data = {this.state.currentLesson} id = {this.props.id} />
 
             ) : (
               <h3> Select a lesson </h3>

@@ -12,5 +12,9 @@ export default {
   },
   saveLesson: function(lessonData) {
     return axios.post("/api/lessons", lessonData);
+  },
+  saveNote: function(id, noteData){
+    console.log("id in API call", id);
+    return axios.post("api/lessons/" + id, noteData)
   }
 };
