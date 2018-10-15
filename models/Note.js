@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const noteSchema = new Schema({
-    comment: { type: String, require: true},
+    comment: { type: String},
     user: {type: String}
 })
 

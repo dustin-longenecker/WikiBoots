@@ -20,14 +20,14 @@ export default class LessonForm extends React.Component {
     event.preventDefault();
     console.log("ID: " + this.props.id);
     console.log("Data: ", this.state);
-    if (this.state.user && this.state.comment) {
-      API.saveNote(this.props.id, {
-        user: this.state.user,
-        comment: this.state.comment,
-      })
-        .then(res => console.log(res)) 
-        .catch(err => console.log(err));
-    }
+
+    API.saveNote(this.props.id, {
+      user: this.state.user,
+      comment: this.state.comment,
+    })
+      .then(() => window.location.reload())
+      .catch(err => console.log(err));
+
   };
 
 
@@ -38,20 +38,34 @@ export default class LessonForm extends React.Component {
         <FormGroup row>
           <Label for="user" sm={2}>Username</Label>
           <Col sm={10}>
-            <Input type="text" name="user" id="userName" value={this.state.user} onChange={this.handleInputChange}/>
+            <Input 
+            type="text" 
+            name="user" 
+            id="userName" 
+            value={this.state.user} 
+            onChange={this.handleInputChange} />
           </Col>
         </FormGroup>
 
         <FormGroup row>
           <Label for="comment" sm={2}>Comment</Label>
           <Col sm={10}>
-          <Input type="text" name="comment" id="commentSubject" value={this.state.comment} onChange={this.handleInputChange}>
-          </Input>
+            <Input 
+            type="text" 
+            name="comment" 
+            id="commentSubject" 
+            value={this.state.comment} 
+            onChange={this.handleInputChange}>
+            </Input>
           </Col>
         </FormGroup>
         <FormGroup check row>
           <Col sm={{ size: 10, offset: 2 }}>
-            <Button id="commentSubmitButton" onClick={this.handleFormSubmit}>Submit</Button>
+            <Button 
+            id="commentSubmitButton" 
+            onClick={this.handleFormSubmit}
+            >Submit
+            </Button>
           </Col>
         </FormGroup>
       </Form>
