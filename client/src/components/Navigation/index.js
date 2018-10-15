@@ -14,13 +14,13 @@ import { Navbar, NavLink, Nav, NavItem } from 'reactstrap';
 const Navigation = ({ sessionStore }) =>
   <NavItem>
     { sessionStore.authUser
-        ? <NavigationAuth />
+        ? <NavigationAuth username={sessionStore.authUser}/>
         : <NavigationNonAuth />
     }
   </NavItem>
 
-const NavigationAuth = () =>
-    <NavLink onClick={auth.doSignOut}>Sign Out</NavLink>
+const NavigationAuth = props =>
+    <NavLink onClick={auth.doSignOut}>{props.username} Sign Out</NavLink>
 
 const NavigationNonAuth = () =>
     <NavLink href={routes.SIGN_IN}>Sign In</NavLink>

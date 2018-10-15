@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Notes from '../Notes';
-
+import AddNote from '../AddNote';
 class Lesson extends Component {
   render() {
     return (
@@ -11,6 +11,7 @@ class Lesson extends Component {
         <p><a>code</a></p>
         <p>video</p>
         <Notes/>
+        <AddNote/>
       </div>
     );
   }
