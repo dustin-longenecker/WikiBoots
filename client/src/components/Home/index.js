@@ -5,6 +5,8 @@ import { compose } from 'recompose';
 import Content from '../Content';
 import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
+import AddNote from '../AddNote';
+
 
 class HomePage extends Component {
   componentDidMount() {
@@ -23,6 +25,8 @@ class HomePage extends Component {
         <h1>Home</h1>
         <p>The Home Page is accessible by every signed in user.</p>
         <Content/>
+        <AddNote/>
+
       </div>
     );
   }
