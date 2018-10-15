@@ -5,8 +5,9 @@ const Schema = mongoose.Schema;
 const lessonSchema = new Schema({
     title: { type: String, require: true},
     explanation: { type: String, require: true},
-    code: { type: String, required: true},
+    code: { type: String},
     video: { type: String },
+    subject: { type: String },
     notes: {
         type: Schema.Types.ObjectId,
         ref: "Note"
