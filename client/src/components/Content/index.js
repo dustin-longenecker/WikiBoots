@@ -18,21 +18,24 @@ class Content extends Component {
 
   componentDidMount() {
     this.loadLessons();
+    if(this.props.id)
+    {
+      this.selectLesson(this.props.id); //Need this.state.currentLesson to update when lesson is clicked when already viewing a lesson.
+    }
   }
 
   loadLessons = () => {
     API.getLessons()
       .then(res =>
-        this.setState({ lessons: res.data })
+        {this.setState({ lessons: res.data })
+        console.log(res)}
       )
       .catch(err => console.log(err));
   };
 
   selectLesson = (id) => {
     API.getLesson(id)
-      .then(res =>
-        this.setState({ currentLesson: res.data })
-      )
+      .then(res => this.setState({ currentLesson: res.data }))
       .catch(err => console.log(err))
   };
 
@@ -51,9 +54,12 @@ class Content extends Component {
               </ListItem>
             ))}
           </LessonList>) : (<h3> No results to display</h3>)}
-        <Router>
-        <Route exact path={routes.LESSONCONTENT} component={() => <Lesson />} />
-        </Router>
+          {this.props.id ? (
+            <Lesson data = {this.state.currentLesson}/>
+
+            ) : (
+              <h3> Select a lesson </h3>
+            )}
       </div>
 
     );
