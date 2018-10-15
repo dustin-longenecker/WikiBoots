@@ -1,35 +1,29 @@
-import React from 'react';
+import React, { Fragment } from 'react'
 import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import { compose } from 'recompose';
+import { auth } from '../../firebase';
+
 
 import SignOutButton from '../SignOut';
 import * as routes from '../../constants/routes';
 
-import { Navbar, Nav, NavItem } from 'reactstrap';
+import { Navbar, NavLink, Nav, NavItem } from 'reactstrap';
 
 
 const Navigation = ({ sessionStore }) =>
-  <Nav>
+  <NavItem>
     { sessionStore.authUser
         ? <NavigationAuth />
         : <NavigationNonAuth />
     }
-  </Nav>
+  </NavItem>
 
 const NavigationAuth = () =>
-  <ul>
-    <li><Link to={routes.LANDING}>Landing</Link></li>
-    <li><Link to={routes.HOME}>Home</Link></li>
-    <li><Link to={routes.ACCOUNT}>Account</Link></li>
-    <li><SignOutButton /></li>
-  </ul>
+    <NavLink onClick={auth.doSignOut}>Sign Out</NavLink>
 
 const NavigationNonAuth = () =>
-  <ul>
-    <li><Link to={routes.LANDING}>Landing</Link></li>
-    <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-  </ul>
+    <NavLink href={routes.SIGN_IN}>Sign In</NavLink>
 
 export default compose(
   inject('sessionStore'),
