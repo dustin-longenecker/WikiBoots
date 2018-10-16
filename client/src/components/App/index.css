@@ -1,14 +1,3 @@
 .app {
   margin: 20px;
 }
-
-#lessonSubmitForm {
-  padding: 25px 50px 0 50px;
-}
-
-#navbarFormat {
-  background-color: #F0E68C;
-  border-style: solid;
-  border-width: 1px;
-  border-color: forestgreen;
-}

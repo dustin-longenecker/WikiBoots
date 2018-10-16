@@ -5,14 +5,21 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
+import { Container, Row, Col } from 'reactstrap';
 
 const SignInPage = ({ history }) =>
-  <div>
-    <h1>Sign In</h1>
+  <Container className="body-format" id="signin-body">
+    <Row>
+      
+      <Col md="12" id="signin-center">
+    <h3>Sign In</h3>
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
-  </div>
+      </Col>
+      
+    </Row>
+  </Container>
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
