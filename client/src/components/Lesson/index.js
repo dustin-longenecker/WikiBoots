@@ -4,6 +4,7 @@ import AddNote from '../AddNote';
 class Lesson extends Component {
   
   render() {
+    console.log("Notes: ", this.props.data.notes);
     console.log("notes section: ", this.props.data.notes ? this.props.data.notes.body : "Hmm");
     return (
       <div className = "col-sm-10">
