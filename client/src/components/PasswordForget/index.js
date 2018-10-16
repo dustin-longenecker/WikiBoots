@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom';
 
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
+import { Container, Row, Col } from 'reactstrap';
 
 const PasswordForgetPage = () =>
-  <div>
-    <h1>PasswordForget</h1>
+  <Container className="body-format">
+  <Row>
+    <Col md="12" id="signin-center">
+    <h3>PasswordForget</h3>
     <PasswordForgetForm />
-  </div>
+    </Col>
+  </Row>
+  </Container>
+
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,

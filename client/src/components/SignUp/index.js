@@ -6,12 +6,17 @@ import {
 
 import { auth, db } from '../../firebase';
 import * as routes from '../../constants/routes';
+import { Container, Row, Col } from 'reactstrap';
 
 const SignUpPage = ({ history }) =>
-  <div>
-    <h1>SignUp</h1>
+  <Container className="body-format">
+    <Row>
+      <Col md="12" id="signin-center">
+    <h3>SignUp</h3>
     <SignUpForm history={history} />
-  </div>
+      </Col>
+    </Row>
+  </Container>
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
