@@ -5,8 +5,8 @@ class Notes extends Component {
     return (
       <div>
         <h3>Notes</h3>
-        <p>{this.props.data ? this.props.data.comment: "No comments yet" }</p> 
         <p>{this.props.data ? this.props.data.user : "" }</p>
+        <p>{this.props.data ? this.props.data.comment: "No comments yet" }</p> 
       </div>
     );
   }

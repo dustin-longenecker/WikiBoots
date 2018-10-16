@@ -28,7 +28,7 @@ export default class LessonForm extends React.Component {
         code: this.state.code,
         video: this.state.video
       }).then(res => console.log(res))
-        // .then(res => this.loadLessons()) REFRESH PAGE HERE SO NEWLY ADDED LESSON SHOWS UP?
+        .then(() => window.location.reload())
         .catch(err => console.log(err));
     }
   };
@@ -88,7 +88,7 @@ export default class LessonForm extends React.Component {
           <Label for="exampleText" sm={2}>Code</Label>
           <Col sm={10}>
             <Input
-              placeholder="Lesson Content"
+              placeholder="Code"
 
               type="textarea"
               name="code"
@@ -103,7 +103,7 @@ export default class LessonForm extends React.Component {
           <Label for="exampleText" sm={2}>Video</Label>
           <Col sm={10}>
             <Input
-              placeholder="Lesson Content"
+              placeholder="Video Link"
 
               type="text"
               name="video"
