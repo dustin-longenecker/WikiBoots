@@ -24,7 +24,7 @@ export default class NavBar extends React.Component {
     return (
       <div>
         <Navbar color="faded" light id="navbarFormat">
-          <NavbarBrand className="mr-auto"><img src="../../assets/wikibootlogo.png" id="wb-logo" alt="WikiBoots" href="/"/></NavbarBrand>
+          <NavbarBrand className="mr-auto"><a href="/"><img src="../../assets/wikibootlogo.png" id="wb-logo" alt="WikiBoots" /></a></NavbarBrand>
           <input className="" type="search" placeholder="Search"></input>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
