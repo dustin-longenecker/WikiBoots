@@ -1,13 +1,19 @@
 import React from 'react';
+import { Table } from 'reactstrap';
 
 
 export const LessonList = ({ children }) => {
   return (
-    <div className="col-sm-2 list-overflow-container">
-      <ul className="list-group">
-        {children}
-      </ul>
-    </div>
+    <Table bordered>
+      <thead>
+        <tr>
+          <th>Select a Lesson</th>
+        </tr>
+      </thead>
+      <tbody>
+          {children}
+      </tbody>
+    </Table>
   );
 };
 

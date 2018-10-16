@@ -8,6 +8,9 @@ import {
   Route,
 } from 'react-router-dom';
 import * as routes from '../../constants/routes';
+import {Table, Row, Col} from 'reactstrap';
+import LessonForm from '../LessonForm';
+
 
 
 class Content extends Component {
@@ -42,7 +45,20 @@ class Content extends Component {
 
   render() {
     return (
-      <div className = "row">
+      <Table>
+        <Row>
+        <Col md="9">
+          {this.props.id ? (
+            <Lesson data = {this.state.currentLesson} id = {this.props.id} />
+
+            ) : (
+              <div>
+              <h3> Create a lesson </h3>
+              <LessonForm/>
+              </div>
+            )}
+            </Col>
+        <Col md="3">
         {this.state.lessons.length ? (
           <LessonList>
             {this.state.lessons.map(lesson => (
@@ -55,13 +71,10 @@ class Content extends Component {
               </ListItem>
             ))}
           </LessonList>) : (<h3> No results to display</h3>)}
-          {this.props.id ? (
-            <Lesson data = {this.state.currentLesson} id = {this.props.id} />
+          </Col>
 
-            ) : (
-              <h3> Select a lesson </h3>
-            )}
-      </div>
+            </Row>
+      </Table>
 
     );
   }
